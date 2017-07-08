@@ -15,6 +15,8 @@ var JOA = 'JSONArray';
 
 /* which parses JSON and gives code */
 function parseJSON(jsonResponse) {
+    var scrollPos =  $('#show-box').offset().top;
+    $(window).scrollTop(scrollPos);
     var javaCode = JOB+' jsonObject = new '+JOB+'(your string here);<br>';
     // Handle the parser to code here
     var jparsed = JSON.parse(jsonResponse);
@@ -31,11 +33,11 @@ function parseJSON(jsonResponse) {
             var keys = Object.keys(jparsed[objNow][0]).length;
             for(var j = 0; j < keys; j++) {
                 inobjNow = Object.keys(jparsed[objNow][0])[j];
-                javaCode += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String '+inobjNow+' = insideObject.getString("'+inobjNow+'")<br>';
+                javaCode += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String '+inobjNow+' = insideObject.optString("'+inobjNow+'")<br>';
             }
             javaCode += '}';
         } else {
-            javaCode += 'String '+objNow+' = jsonObject.getString("'+objNow+'");<br>';
+            javaCode += 'String '+objNow+' = jsonObject.optString("'+objNow+'");<br>';
         }
     }
     // Send the code
