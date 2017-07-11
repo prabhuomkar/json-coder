@@ -1,53 +1,126 @@
-<html>
+
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>json-coder</title>
-    <!-- stylesheets !-->
+    
+    <!--  Fonts and icons  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Arima+Madurai:400,700|Baumans|Acme" />
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+    <!-- stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/material-kit.css" type="text/css">
+    <link rel="stylesheet" href="css/about.css" type="text/css">
+
 </head>
-<body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><i class="fa fa-code"></i> json-coder</a>
+
+<body class="profile-page">
+    <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><i class="fa fa-code"></i> json-coder</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="btn-tooltip" title="Home"><a href="home.html"> HOME  <span class="sr-only">(current)</span></a></li>
+                        <li  class="active btn-tooltip" title="About the coder!"><a href="about.html"> ABOUT </a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="btn-tooltip" title="nerdyninja"><a href="https://github.com/nerdyninja/json-coder" target="_blank"><span><i class="fa fa-1x fa-github" aria-hidden="true"></i></span> &nbsp; GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html">{ HOME } <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="about.html">{ ABOUT }</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/nerdyninja/json-coder">GitHub</a></li>
-            </ul>
+    </nav>
+
+    <div class="wrapper">
+        <div class="header header-filter" style="background-image: url('images/coding3.jpg');"></div>
+
+        <div class="main main-raised">
+            <div class="profile-content">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="images/code1.png" alt="Circle Image" class="img-circle img-responsive img-raised">
+                            </div>
+                            <div class="name">
+                                <h3 class="title">About <i class="fa fa-code"></i> json-coder</h3>
+                            </div>
+                            <hr>
+                            <h3>Made to help app developers in <code>json</code> parsing.
+                            Still with lot of bugs and needs lot of improvements.
+                            Liked this idea? Want to make this better? Forks and PRs are appreciated!</h3>
+                            <center><h2><strong>Gracias!</strong></h2></center>
+                            <hr>
+                        </div>
+                    </div>
+                    <!-- <div class="description text-center">
+                        <h4>Not familiar with JSON?</h4>
+                    </div> -->
+                    <br>
+                    <div class="container">
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-    </div>
-</nav>
-<div class="container-fluid">
-    <h1 align="center">
-        About json-coder
-    </h1>
-    <p class="lead" align="center">
-        Made to help app developers in JSON parsing.<br>
-        Still with lot of bugs and needs lot of improvements.<br>
-        Liked this idea? Want to make this better? Forks and PRs are appreciated!<br>
-    </p>
-    <footer>
-        <p align="center">json-coder by <a href="https://github.com/nerdyninja">nerdyninja</a></p>
-        <p align="center">{ <a href="index.html">Home</a> } { <a href="about.html">About</a> }</p>
+
+
+        <footer class="footer">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/op1111?ref=br_rs" target="_blank">
+                            Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/prabhu.omkar/?hl=en" target="_blank">
+                               Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            <div class="copyright pull-right">
+                &copy; 2017 - made with <i class="fa fa-heart heart"></i>&nbsp; by nerdyninja &amp; designed by Brijesh097
+            </div>
+        </div>
     </footer>
-</div>
-<!-- scripts !-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/jsoncoder.js"></script>
+
+
 </body>
+    <!-- scripts !-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jsoncoder.js"></script>
+
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="js/nouislider.min.js" type="text/javascript"></script>
+
+    <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
+    <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+
+    <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+    <script src="js/material-kit.js" type="text/javascript"></script>
+
 </html>
