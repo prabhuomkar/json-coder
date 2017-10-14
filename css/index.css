@@ -71,7 +71,23 @@ textarea {
 .modal-body p {
 	font-size: 17px;
 }
+.profile-page .header {
+     height: 0px;
+}
 
+li.active.btn-tooltip{
+	border-radius: 3px;
+	-webkit-transition:all .25s;
+}
+.nav > li:hover {
+	background-color:rgba(255, 255, 255, 0.1);
+}
+.nav > li{
+	-webkit-transition:al .25s;
+}
+li.active.btn-tooltip:hover{
+	background-color:rgba(255, 255, 255, 0.1);
+}
 hr {
     border: 0;
     height: 1px;
