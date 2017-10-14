@@ -70,34 +70,6 @@
                               CLICK HERE!
                             </button>
 
-                            <!-- Modal Core -->
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel"><span><i class="fa fa-code"></i> json-coder</span></h4>
-                                  </div>
-                                  <div class="modal-body">
-                                    <center>
-                                        <h4>What is JSON?</h4>
-                                        <p>JSON stands for "JavaScript Object Notation" and is pronounced "Jason" (like in the Friday the 13th movies). It's meant to be a human-readable and compact solution to represent a complex data structure and facilitate data-interchange between systems.</p>
-
-                                        <h4>Why use JSON?</h4>
-                                        <p>There are tons of reasons why you would want to use JSON:<br>
-                                        It's human readable... if it's properly formatted :-P
-                                        It's compact because it doesn't use a full markup structure, unlike XML
-                                        It's easy to parse, especially in JavaScript
-                                        A gazillion JSON libraries are available for most programming languages
-                                        The data structure is easy to understand.</p>
-                                    </center>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-success btn-simple" data-dismiss="modal">GOT IT!</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                             <!-- <h3 style="padding-left: 32px; font-weight: bold;">Enter json Response or json link below: </h3> -->
                             <hr>
                         </div>
@@ -125,7 +97,7 @@
                         <div class="row" id="show-box">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <h5>Pretty <code>JSON</code></h5>
-                                <pre id="pretty-code" style="max-height: 400;display:none;""></pre>
+                                <pre id="pretty-code" style="max-height: 400;display:none;"></pre>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <h5>Parsing Code for Android (Java)</h5>
@@ -162,7 +134,34 @@
         </div>
     </footer>
 
+    <!-- Modal Core -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel"><span><i class="fa fa-code"></i> json-coder</span></h4>
+            </div>
+            <div class="modal-body">
+              <center>
+                  <h4>What is JSON?</h4>
+                  <p>JSON stands for "JavaScript Object Notation" and is pronounced "Jason" (like in the Friday the 13th movies). It's meant to be a human-readable and compact solution to represent a complex data structure and facilitate data-interchange between systems.</p>
 
+                  <h4>Why use JSON?</h4>
+                  <p>There are tons of reasons why you would want to use JSON:<br>
+                  It's human readable... if it's properly formatted :-P
+                  It's compact because it doesn't use a full markup structure, unlike XML
+                  It's easy to parse, especially in JavaScript
+                  A gazillion JSON libraries are available for most programming languages
+                  The data structure is easy to understand.</p>
+              </center>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-simple" data-dismiss="modal">GOT IT!</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
     <!-- scripts !-->
     <script type="text/javascript" src="js/jquery.min.js"></script>
