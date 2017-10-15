@@ -10,6 +10,14 @@
     margin: 20px;
 }
 
+.btn-danger {
+    background-color: #d33a35;
+}
+
+.btn-success {
+    background-color: #317131;
+}
+
 .img-circle {
     margin-left: auto;
     margin-right: auto;
@@ -34,6 +42,7 @@ footer ul li {
 }
 
 footer ul li a {
+    color: #1c4162;
     display: block;
     position: relative;
     text-transform: uppercase;
