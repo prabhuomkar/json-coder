@@ -1,0 +1,47 @@
+.wrapper {
+    margin-top: 60px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.btn {
+    margin: 20px;
+}
+
+.img-circle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: #eeeeee;
+    padding: 1rem 3rem 1rem 3rem;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a {
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.copyright {
+    padding: 10px;
+}
