@@ -1,5 +1,5 @@
 .wrapper {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .content {
@@ -13,6 +13,7 @@
 .img-circle {
     margin-left: auto;
     margin-right: auto;
+    height: 80px;
 }
 
 footer {
@@ -49,4 +50,12 @@ footer ul li a {
 .btn-json {
     margin-left: 0px;
     margin-right: 0px;
+}
+
+#show-box pre {
+    min-height: 150px;
+}
+
+pre span {
+    color: #ccc;
 }
