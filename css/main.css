@@ -1,5 +1,6 @@
-.wrapper {
-    margin-top: 60px;
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 .content {
@@ -7,12 +8,7 @@
 }
 
 .btn {
-    margin: 20px;
-}
-
-.img-circle {
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 20px;
 }
 
 footer {
