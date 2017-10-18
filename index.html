@@ -23,26 +23,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll" style="background-color: #000;">
-        <div class="container">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><i class="fa fa-code"></i> json-coder</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="active btn-tooltip" title="Home"><a href="index.html"> HOME  <span class="sr-only">(current)</span></a></li>
-                        <li  class="btn-tooltip" title="About the coder!"><a href="about.html"> ABOUT </a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="btn-tooltip" title="nerdyninja"><a href="https://github.com/nerdyninja/json-coder" target="_blank"><span><i class="fa fa-1x fa-github" aria-hidden="true"></i></span> &nbsp; GitHub</a></li>
-                    </ul>
+    <nav class="navbar navbar-transparent navbar-color-on-scroll" style="background-color: #000;">
+        <div class="container container-fluid">
+            <div class="row">
+                <div class="col-xs-12">                    
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><i class="fa fa-code"></i> json-coder</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active btn-tooltip" title="Home"><a href="index.html"> HOME  <span class="sr-only">(current)</span></a></li>
+                            <li  class="btn-tooltip" title="About the coder!"><a href="about.html"> ABOUT </a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="btn-tooltip" title="nerdyninja"><a href="https://github.com/nerdyninja/json-coder" target="_blank"><span><i class="fa fa-1x fa-github" aria-hidden="true"></i></span> &nbsp; GitHub</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,11 +54,11 @@
 
         <div class="container">
             <div class="row content">
-                <div class="col-md-6 text-center">
-                    <img src="images/code1.png" alt="Circle Image" class="img-circle img-responsive img-raised">
+                <div class="col-xs-3 col-sm-3 col-md-6 text-center">
+                    <img src="images/code1.png" alt="Circle Image" class="logo img-responsive img-raised">
                 </div>
 
-                <div class="col-md-6 text-center">
+                <div class="col-xs-9 col-sm-9 col-md-6 text-center">
                     <div class="name">
                         <h3 class="title"><i class="fa fa-code"></i> json-coder</h3>
                     </div>
@@ -77,24 +79,24 @@
                         </center>
                     </div>
                 </div>
+            </div>
+            <div class="row content">
                 <div class="form-group">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-xs-12 text-right">
+                        <button type="submit" class="btn btn-success" id="submit-json-btn"><i class="fa fa-check-circle"></i> &nbsp;GET PARSING CODE</button>
                         <button type="reset" onclick="resetJSON()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Clear</button>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <button type="submit" class="btn btn-success pull-right" id="submit-json-btn"><i class="fa fa-check-circle"></i> &nbsp;GET PARSING CODE</button>
                     </div>
                 </div>
             </div>
 
-            <div class="row" id="show-box">
+            <div class="row content" id="show-box">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h3>Pretty <code>JSON</code></h3>
-                    <pre id="pretty-code"></pre>
+                    <pre id="pretty-code" class="code-box"></pre>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h3>Parsing Code for Android (Java)</h3>
-                    <pre id="java-code"></pre>
+                    <pre id="java-code" class="code-box"></pre>
                 </div>
             </div>
 
@@ -104,22 +106,26 @@
 
     <footer class="footer">
         <div class="container">
-            <nav class="pull-left">
-                <ul>
-                    <li>
-                        <a href="https://www.facebook.com/op1111?ref=br_rs" target="_blank">
-                            <i class="fa fa-facebook"></i> Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/prabhu.omkar/?hl=en" target="_blank">
-                           <i class="fa fa-instagram"></i> Instagram
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright pull-right">
-                &copy; 2017 - made with <i class="fa fa-heart heart"></i>&nbsp; by nerdyninja &amp; designed by Brijesh097
+            <div class="row">
+                <div class="col-xs-12">
+                    <nav class="pull-left">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://www.facebook.com/op1111?ref=br_rs" target="_blank">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/prabhu.omkar/?hl=en" target="_blank">
+                                   <i class="fa fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright pull-right">
+                        &copy; 2017 - made with <i class="fa fa-heart heart"></i>&nbsp; by nerdyninja &amp; designed by Brijesh097
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
