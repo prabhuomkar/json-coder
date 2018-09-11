@@ -1,6 +1,11 @@
 // Created by Omkar Prabhu on 8/7/2017
 
 $(document).ready(function () {
+	// Enable tooltip everywhere
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+	
 	/* Clears entry */
 	$('.clr-field').on('click', function () {
 		$('#json-response').val('');
