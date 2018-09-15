@@ -17,7 +17,7 @@ Omkar Prabhu [nerdyninja](https://github.com/nerdyninja)
 1. [Brijesh097](https://github.com/Brijesh097) for Initial UI.
 2. [albertusangga](https://github.com/albertusangga) for UI Bug Fixes
 3. [mkasberg](https://github.com/mkasberg) for restyling UI.
-4. [RaajNadar](https://github.com/RaajNadar) for fixing UI Bugs.
+4. [raajnadar](https://github.com/raajnadar) for fixing UI Bugs.
 
 ### License
 json-coder is open under MIT License
