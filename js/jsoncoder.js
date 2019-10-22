@@ -91,10 +91,10 @@ $(document).ready(function() {
       if(checkJSON(response)) {
         parseJSON(response);
       } else {
-        $('#form-response').html('<div class="alert alert-dismissible alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button> There is some error in your JSON Response! </div>');
+        $('#form-response').html('<div class="alert alert-dismissible alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button> There is some error in your JSON Response! </div>');
       }
      } else {
-        $('#form-response').html('<div class="alert alert-dismissible alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button> Paste a valid JSON file or url</div>');
+        $('#form-response').html('<div class="alert alert-dismissible alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button> Paste a valid JSON file or url</div>');
         setTimeout(function() {
           $('#form-response').children().fadeOut();
         }, 4000);

@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Arima+Madurai:400,700|Baumans|Acme" />
 
     <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
     <!-- stylesheets -->
@@ -23,24 +23,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><i class="fa fa-code"></i> json-coder</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active btn-tooltip" title="Home"><a href="index.html"> HOME  <span class="sr-only">(current)</span></a></li>
-                    <li  class="btn-tooltip" title="About the coder!"><a href="about.html"> ABOUT </a></li>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-code"></i> json-coder</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" data-toggle="tooltip" data-placement="bottom" title="Home">
+                        <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="About the coder!">
+                        <a class="nav-link" href="about.html">ABOUT</a>
+                    </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="btn-tooltip" title="nerdyninja"><a href="https://github.com/nerdyninja/json-coder" target="_blank"><span><i class="fa fa-1x fa-github" aria-hidden="true"></i></span> &nbsp; GitHub</a></li>
+                <ul class="navbar-nav">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="nerdyninja">
+                        <a class="nav-link" href="https://github.com/nerdyninja/json-coder" target="_blank"><span>GitHub <i class="fa fa-1x fa-github" aria-hidden="true"></i></span></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -54,15 +55,13 @@
                     <img src="images/code1.png" alt="Circle Image" class="center-block img-responsive">
                 </div>
 
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 text-center" style="margin: auto;">
                     <div class="name">
-                        <h3 class="title"><i class="fa fa-code"></i> json-coder</h3>
+                        <h4 class="title"><i class="fa fa-code"></i> json-coder</h4>
                     </div>
-                    <h3>. . . &nbsp;not familiar with <code>json</code>?</h3>
+                    <h4>. . . &nbsp;not familiar with <code>json</code>?</h4>
                     <!-- Button trigger modal -->
-                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                        CLICK HERE!
-                    </button>
+                    <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#myModal">CLICK HERE!</button>
                 </div>
 
             </div>
@@ -71,31 +70,39 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <center>
-                            <textarea class="form-control" rows="9" id="json-response" placeholder="Enter JSON Response or JSON link"></textarea>
+                            <textarea class="form-control" rows="8" id="json-response" placeholder="Enter JSON Response or JSON link"></textarea>
                         </center>
                     </div>
                     <div id="form-response"></div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
-                        <button type="reset" class="btn btn-danger clr-field"><i class="fa fa-trash"></i> &nbsp;Clear</button>
+                        <button type="reset" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> &nbsp;Clear</button>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success pull-right" id="submit-json-btn"><i class="fa fa-check-circle"></i> &nbsp;GET PARSING CODE</button>
+                        <button type="submit" class="btn btn-success pull-right btn-sm" id="submit-json-btn"><i class="fa fa-check-circle"></i> &nbsp;GET PARSING CODE</button>
                     </div>
                 </div>
             </div>
 
-            <div class="row" id="show-box">
+            <div class="row mt-4 mb-2" id="show-box">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h3>Pretty <code>JSON</code></h3>
-                    <pre id="pretty-code">Paste some json data in the textbox</pre>
+                    <h4>Pretty <code>JSON</code></h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <pre id="pretty-code">Paste some json data in the textbox</pre>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h3>Parsing Code for Android (Java)</h3>
-                    <pre id="java-code">Get your json data for android here</pre>
+                    <h4>Parsing Code for Android (Java)</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <pre id="java-code">Get your json data for android here</pre>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -120,7 +127,7 @@
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2017 - made with <i class="fa fa-heart heart"></i>&nbsp; by nerdyninja &amp; designed by Brijesh097
+                &copy; 2017 - made with <i class="fa fa-heart heart"></i>&nbsp; by nerdyninja &amp; designed by mazsam
             </div>
         </div>
     </footer>
@@ -130,15 +137,17 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="myModalLabel"><span><i class="fa fa-code"></i> json-coder</span></h4>
+                <h5 class="modal-title"><span><i class="fa fa-code"></i> json-coder</span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
               <center>
-                  <h4>What is JSON?</h4>
+                  <h5>What is JSON?</h5>
                   <p>JSON stands for "JavaScript Object Notation" and is pronounced "Jason" (like in the Friday the 13th movies). It's meant to be a human-readable and compact solution to represent a complex data structure and facilitate data-interchange between systems.</p>
 
-                  <h4>Why use JSON?</h4>
+                  <h5>Why use JSON?</h5>
                   <p>There are tons of reasons why you would want to use JSON:<br>
                   It's human readable... if it's properly formatted :-P
                   It's compact because it doesn't use a full markup structure, unlike XML
@@ -148,14 +157,15 @@
               </center>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success btn-simple" data-dismiss="modal">GOT IT!</button>
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">GOT IT!</button>
             </div>
           </div>
         </div>
       </div>
       <!-- scripts !-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jsoncoder.js"></script>
 
     <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
