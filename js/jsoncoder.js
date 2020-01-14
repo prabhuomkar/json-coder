@@ -2,10 +2,12 @@
 
 $(document).ready(function() {
   /* Clears entry */
+  var ans = '';
   $('.clr-field').on('click', function() {
     $('#json-response').val('');
     $('#pretty-code').html('Paste some json data in the textbox');
     $('#java-code').html('Get your json data for android here');
+    ans = '';
   });
 
   /* check JSON Response is okay or not */
@@ -19,19 +21,6 @@ $(document).ready(function() {
     } catch(e) {
         return false;
     }
-  }
-
-  var JOB = 'JSONObject';
-  var JOA = 'JSONArray';
-
-  function checkIfObject(jsonResponse) {
-    if(jsonResponse instanceof Object) return true;
-    return false;
-  }
-
-  function checkIfArray(jsonResponse) {
-    if(jsonResponse instanceof Array) return true;
-    return false;
   }
 
   function getAction(obj) {
@@ -52,41 +41,60 @@ $(document).ready(function() {
     return signCode;
   }
 
-  /* which parses JSON and gives code */
+  /* Contributed by Vipul Singh Raghuvanshi[https://github.com/vipul-08]
+  ** Following is the recursive algorithm to take a json object string and get the java parsing code */
+
   function parseJSON(jsonResponse) {
-    var scrollPos =  $('#show-box').offset().top;
-    $(window).scrollTop(scrollPos);
-    var javaCode = JOB+' jsonObject = new '+JOB+'(your string here);<br>';
-    // Handle the parser to code here
     var jparsed = JSON.parse(jsonResponse);
-    // Count
-    var obj = Object.keys(jparsed).length;
-    var countObjects = obj;
-    for(var i = 0; i < countObjects; i++) {
-      var objNow = Object.keys(jparsed)[i];
-      if(jparsed[objNow] instanceof Array) {
-          javaCode += JOA+' '+objNow+' = jsonObject.getArray("'+objNow+'");<br>';
-          javaCode += 'for(int i = 0; i < '+objNow+'.length(); i++) {<br>';
-          // Get objects inside array
-          javaCode += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+JOB+' insideObject = '+objNow+'.getJSONObject(i);<br>';
-          var keys = Object.keys(jparsed[objNow][0]).length;
-          for(var j = 0; j < keys; j++) {
-              inobjNow = Object.keys(jparsed[objNow][0])[j];
-              inobjVal = Object.values(jparsed[objNow][0])[j];
-              javaCode += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getType(inobjVal)+' '+inobjNow+' = insideObject.'+getAction(inobjVal)+'("'+inobjNow+'");<br>';
+    if(jparsed instanceof Object) {
+      ans = ans + "JSONObject jsonObject = new JSONObject('your string here');" + "<br>";
+      parserJSON(JSON.parse(jsonResponse), "jsonObject");
+    } else {
+      ans = ans + "Not a JSON Object" + "<br>";
+    }
+    $('#java-code').html(ans);
+  }
+
+  function parserJSON(jparsed, label) {
+    if (jparsed instanceof Array) {
+      ans = ans + "for(JSONObject insideObject:  " + label + ") {" + "<br>";
+      parserJSON(jparsed[0], "insideObject");
+      ans = ans +  "}<br>";
+    } else if (jparsed instanceof Object) {
+      var count = Object.keys(jparsed).length;
+      for(var i = 0 ; i < count ; i++) {
+        var objNow = Object.keys(jparsed)[i];
+        var objVal = Object.values(jparsed)[i];
+        if (objVal instanceof Array) {
+          if (objVal[0] instanceof Object) {
+            ans = ans + "JSONArray " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + ".getJSONArray(\""+ objNow +"\");"+ "<br>";
+            parserJSON(objVal, objNow);
           }
-          javaCode += '}<br>';
-      } else {
-          javaCode += 'String '+objNow+' = jsonObject.optString("'+objNow+'");<br>';
+          else {
+            ans = ans + "JSONArray " + objNow.replace(/[^A-Za-z]/g, "") + "Json = " + label + ".getJSONArray(\""+ objNow +"\");"+ "<br>";
+            ans = ans + getType(objVal[0])+"[] " + objNow.replace(/[^A-Za-z]/g, "") + " = new " + getType(objVal[0]) + "[" + objNow.replace(/[^A-Za-z]/g, "") + "Json.length()" + "];" + "<br>";
+            ans = ans + "for(int i = 0 ; i < " + objNow.replace(/[^A-Za-z]/g, "") + "Json.length() ; i++)"+"<br>";
+            ans = ans + objNow.replace(/[^A-Za-z]/g, "") + "[i] = " + objNow.replace(/[^A-Za-z]/g, "") + "Json.get" + getType(objVal[0]) + "(i);" + "<br>";
+          }
+        }
+        else if (objVal instanceof Object) {
+          ans = ans + "JSONObject " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + ".getJSONObject(\""+ objNow +"\");"+ "<br>";
+          parserJSON(objVal, objNow);
+        } 
+        else {
+          ans = ans + getType(objVal) + " " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + "." + getAction(objVal) + "(\"" + objNow + "\");" + "<br>";
+        }
       }
     }
-    // Send the code
-    $('#java-code').html(javaCode);
   }
+
+  /* If you will ask me process to impress a process
+  ** I will never come out of this recursion... */
 
   /* Actions */
   $('#submit-json-btn').on('click', function() {
      var response = $('#json-response').val();
+     ans = '';
      if(!response == '') {
       if(checkJSON(response)) {
         parseJSON(response);
