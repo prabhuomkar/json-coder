@@ -50,7 +50,7 @@ $(document).ready(function() {
       ans = ans + "JSONObject jsonObject = new JSONObject('your string here');" + "<br>";
       parserJSON(JSON.parse(jsonResponse), "jsonObject");
     } else {
-      ans = ans + "Not a JSON Object";
+      ans = ans + "Not a JSON Object" + "<br>";
     }
     $('#java-code').html(ans);
   }
@@ -60,7 +60,6 @@ $(document).ready(function() {
       ans = ans + "for(JSONObject insideObject:  " + label + ") {" + "<br>";
       parserJSON(jparsed[0], "insideObject");
       ans = ans +  "}<br>";
-      
     } else if (jparsed instanceof Object) {
       var count = Object.keys(jparsed).length;
       for(var i = 0 ; i < count ; i++) {
@@ -74,7 +73,8 @@ $(document).ready(function() {
           else {
             ans = ans + "JSONArray " + objNow.replace(/[^A-Za-z]/g, "") + "Json = " + label + ".getJSONArray(\""+ objNow +"\");"+ "<br>";
             ans = ans + getType(objVal[0])+"[] " + objNow.replace(/[^A-Za-z]/g, "") + " = new " + getType(objVal[0]) + "[" + objNow.replace(/[^A-Za-z]/g, "") + "Json.length()" + "];" + "<br>";
-            ans = ans + "for(int i = 0 ; i < " + objNow.replace(/[^A-Za-z]/g, "") + "Json.length() ; i++) " + objNow.replace(/[^A-Za-z]/g, "") + "[i] = " + objNow.replace(/[^A-Za-z]/g, "") + "Json.get" + getType(objVal[0]) + "(i);" + "<br>";
+            ans = ans + "for(int i = 0 ; i < " + objNow.replace(/[^A-Za-z]/g, "") + "Json.length() ; i++)"+"<br>";
+            ans = ans + objNow.replace(/[^A-Za-z]/g, "") + "[i] = " + objNow.replace(/[^A-Za-z]/g, "") + "Json.get" + getType(objVal[0]) + "(i);" + "<br>";
           }
         }
         else if (objVal instanceof Object) {
@@ -88,7 +88,8 @@ $(document).ready(function() {
     }
   }
 
-  // Thanks for Reading :-)
+  /* If you will ask me process to impress a process
+  ** I will never come out of this recursion... */
 
   /* Actions */
   $('#submit-json-btn').on('click', function() {
