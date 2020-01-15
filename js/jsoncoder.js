@@ -1,5 +1,4 @@
 // Created by Omkar Prabhu on 8/7/2017
-
 $(document).ready(function() {
   /* Clears entry */
   var ans = '';
@@ -47,19 +46,19 @@ $(document).ready(function() {
   function parseJSON(jsonResponse) {
     var jparsed = JSON.parse(jsonResponse);
     if(jparsed instanceof Object) {
-      ans = ans + "JSONObject jsonObject = new JSONObject('your string here');" + "<br>";
+      ans = ans + "JSONObject jsonObject = new JSONObject('your string here');" + "\n";
       parserJSON(JSON.parse(jsonResponse), "jsonObject");
     } else {
-      ans = ans + "Not a JSON Object" + "<br>";
+      ans = ans + "Not a JSON Object" + "\n";
     }
-    $('#java-code').html(ans);
+    $('#java-code').html(js_beautify(ans));
   }
 
   function parserJSON(jparsed, label) {
     if (jparsed instanceof Array) {
-      ans = ans + "for(JSONObject insideObject:  " + label + ") {" + "<br>";
+      ans = ans + "for(JSONObject insideObject:  " + label + ") {" + "\n";
       parserJSON(jparsed[0], "insideObject");
-      ans = ans +  "}<br>";
+      ans = ans +  "}\n";
     } else if (jparsed instanceof Object) {
       var count = Object.keys(jparsed).length;
       for(var i = 0 ; i < count ; i++) {
@@ -67,22 +66,22 @@ $(document).ready(function() {
         var objVal = Object.values(jparsed)[i];
         if (objVal instanceof Array) {
           if (objVal[0] instanceof Object) {
-            ans = ans + "JSONArray " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + ".getJSONArray(\""+ objNow +"\");"+ "<br>";
+            ans = ans + "JSONArray " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + ".getJSONArray(\""+ objNow +"\");"+ "\n";
             parserJSON(objVal, objNow);
           }
           else {
-            ans = ans + "JSONArray " + objNow.replace(/[^A-Za-z]/g, "") + "Json = " + label + ".getJSONArray(\""+ objNow +"\");"+ "<br>";
-            ans = ans + getType(objVal[0])+"[] " + objNow.replace(/[^A-Za-z]/g, "") + " = new " + getType(objVal[0]) + "[" + objNow.replace(/[^A-Za-z]/g, "") + "Json.length()" + "];" + "<br>";
-            ans = ans + "for(int i = 0 ; i < " + objNow.replace(/[^A-Za-z]/g, "") + "Json.length() ; i++)"+"<br>";
-            ans = ans + objNow.replace(/[^A-Za-z]/g, "") + "[i] = " + objNow.replace(/[^A-Za-z]/g, "") + "Json.get" + getType(objVal[0]) + "(i);" + "<br>";
+            ans = ans + "JSONArray " + objNow.replace(/[^A-Za-z]/g, "") + "Json = " + label + ".getJSONArray(\""+ objNow +"\");"+ "\n";
+            ans = ans + getType(objVal[0])+"[] " + objNow.replace(/[^A-Za-z]/g, "") + " = new " + getType(objVal[0]) + "[" + objNow.replace(/[^A-Za-z]/g, "") + "Json.length()" + "];" + "\n";
+            ans = ans + "for(int i = 0 ; i < " + objNow.replace(/[^A-Za-z]/g, "") + "Json.length() ; i++) {"+"\n";
+            ans = ans + objNow.replace(/[^A-Za-z]/g, "") + "[i] = " + objNow.replace(/[^A-Za-z]/g, "") + "Json.get" + getType(objVal[0]) + "(i);" + "\n" + "}" + "\n";
           }
         }
         else if (objVal instanceof Object) {
-          ans = ans + "JSONObject " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + ".getJSONObject(\""+ objNow +"\");"+ "<br>";
+          ans = ans + "JSONObject " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + ".getJSONObject(\""+ objNow +"\");"+ "\n";
           parserJSON(objVal, objNow);
         } 
         else {
-          ans = ans + getType(objVal) + " " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + "." + getAction(objVal) + "(\"" + objNow + "\");" + "<br>";
+          ans = ans + getType(objVal) + " " + objNow.replace(/[^A-Za-z]/g, "") + " = " + label + "." + getAction(objVal) + "(\"" + objNow + "\");" + "\n";
         }
       }
     }
