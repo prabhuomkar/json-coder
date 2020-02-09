@@ -27,6 +27,8 @@ $(document).ready(function() {
   function getAction(obj) {
     if(Number.isInteger(obj)) {
       var signCode = 'getInteger';
+    } else if (typeof obj === 'boolean') {
+      var signCode = 'optBoolean';
     } else {
       var signCode = 'optString';
     }
@@ -36,6 +38,8 @@ $(document).ready(function() {
   function getType(obj) {
     if(Number.isInteger(obj)) {
       var signCode = 'Integer';
+    } else if (typeof obj === 'boolean') {
+      var signCode = 'boolean';
     } else {
       var signCode = 'String';
     }
